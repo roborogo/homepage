@@ -2,7 +2,7 @@
     - Proxmox:
         icon: proxmox
         href: https://192.168.0.159:8006
-        description: Hypervisor
+        description: hypervisor
         container: proxmox
         widget:
           type: proxmox
@@ -11,7 +11,7 @@
           password: "{{HOMEPAGE_VAR_PROXMOX_PASSWORD}}"
     - Docker:
         icon: docker
-        description: Containers
+        description: containers
         container: docker
         widget:
           type: docker
@@ -19,7 +19,7 @@
     - Portainer:
         icon: portainer
         href: http://192.168.0.55:9000
-        description: Container Manager
+        description: container manager
         container: portainer
         widget:
           type: portainer
@@ -27,6 +27,16 @@
           env: 3
           key: "{{HOMEPAGE_VAR_PORTAINER_KEY}}"
           fields: ["running", "stopped", "total"]
+    - Glances:
+        icon: glances
+        href: http://192.168.0.17:61208
+        description: rogenski-pc
+        server: 192.168.0.17
+        statusCheck: true
+        widget:
+          type: glances
+          url: http://192.168.0.17:61208
+          metric: cpu
 
 -  Media:
     - Plex:
