@@ -38,6 +38,23 @@
           url: http://192.168.0.17:61208
           version: 4
           metric: info
+          cpu: true # optional, enabled by default, disable by setting to false
+          mem: true # optional, enabled by default, disable by setting to false
+          cputemp: true # disabled by default
+          uptime: true # disabled by default
+          disk: 
+            - fs:C:\\
+            - fs:D:\\
+            - fs:E:\\
+            - fs:F:\\
+            - fs:G:\\
+            - fs:H:\\
+            - fs:J:\\
+            - fs:K:\\
+            - fs:X:\\
+          diskUnits: bytes # optional, bytes (default) or bbytes. Only applies to disk
+          expanded: true # show the expanded view
+          #label: MyMachine # optional
 
 -  Media:
     - Plex:
