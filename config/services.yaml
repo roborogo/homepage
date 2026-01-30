@@ -8,7 +8,7 @@
           type: proxmox
           url: https://192.168.0.159:8006
           username: api-user@pam!homepage
-          password: ${HOMEPAGE_PROXMOX_PASSWORD}
+          password: {{HOMEPAGE_VAR_PROXMOX_PASSWORD}}
     - Docker:
         icon: docker
         description: Containers
@@ -25,7 +25,7 @@
           type: portainer
           url: http://192.168.0.55:9000
           env: 3
-          key: ${HOMEPAGE_PORTAINER_KEY}
+          key: {{HOMEPAGE_VAR_PORTAINER_KEY}}
           fields: ["running", "stopped", "total"]
 
 -  Media:
@@ -38,7 +38,7 @@
         widget:
           type: plex
           url: http://192.168.0.17:32400
-          key: ${HOMEPAGE_PLEX_KEY}
+          key: {{HOMEPAGE_VAR_PLEX_KEY}}
     - Tautulli:
         icon: tautulli
         href: http://192.168.0.17:8181
@@ -48,7 +48,7 @@
         widget:
           type: tautulli
           url: http://192.168.0.17:8181
-          key: ${HOMEPAGE_TAUTULLI_KEY}
+          key: {{HOMEPAGE_VAR_TAUTULLI_KEY}}
           enableUser: true # optional, defaults to false
           showEpisodeNumber: true # optional, defaults to false
           expandOneStreamToTwoRows: true # optional, defaults to true
@@ -61,7 +61,7 @@
         widget:
           type: overseerr
           url: http://192.168.0.55:5055
-          key: ${HOMEPAGE_OVERSEERR_KEY}
+          key: {{HOMEPAGE_VAR_OVERSEERR_KEY}}
           fields: ["pending", "approved", "processing", "available"]
     - Sonarr:
         icon: sonarr
@@ -71,7 +71,7 @@
         widget:
           type: sonarr
           url: http://192.168.0.55:8989
-          key: ${HOMEPAGE_SONARR_KEY}
+          key: {{HOMEPAGE_VAR_SONARR_KEY}}
           fields: ["wanted", "queued", "series"]
     - Radarr:
         icon: radarr
@@ -81,7 +81,7 @@
         widget:
           type: radarr
           url: http://192.168.0.55:7878
-          key: ${HOMEPAGE_RADARR_KEY}
+          key: {{HOMEPAGE_VAR_RADARR_KEY}}
           enabledQueue: true
           fields: ["wanted", "missing", "queued", "movies"]
     - Lidarr:
@@ -92,7 +92,7 @@
         widget:
           type: lidarr
           url: http://192.168.0.55:8686
-          key: ${HOMEPAGE_LIDARR_KEY}
+          key: {{HOMEPAGE_VAR_LIDARR_KEY}}
           fields: ["wanted", "queued", "artists"]
     - Prowlarr:
         icon: prowlarr
@@ -102,7 +102,7 @@
         widget:
           type: prowlarr
           url: http://192.168.0.55:9696
-          key: ${HOMEPAGE_PROWLARR_KEY}
+          key: {{HOMEPAGE_VAR_PROWLARR_KEY}}
     - qBittorrent:
         icon: qbittorrent
         href: http://192.168.0.55:8079
@@ -111,8 +111,8 @@
         widget:
           type: qbittorrent
           url: http://172.18.0.2:8079
-          username: ${HOMEPAGE_QBITTORRENT_USERNAME}
-          password: ${HOMEPAGE_QBITTORRENT_PASSWORD}
+          username: {{HOMEPAGE_VAR_QBITTORRENT_USERNAME}}
+          password: {{HOMEPAGE_VAR_QBITTORRENT_PASSWORD}}
           enableLeechProgress: true # optional, defaults to false
           fields: ["leech", "download", "seed", "upload"]
     - Bazarr:
@@ -123,7 +123,7 @@
         widget:
           type: bazarr
           url: http://192.168.0.55:6767
-          key: ${HOMEPAGE_BAZARR_KEY}
+          key: {{HOMEPAGE_VAR_BAZARR_KEY}}
           fields: ["missingEpisodes", "missingMovies"]
     - LazyLibrarian:
         icon: lazylibrarian
