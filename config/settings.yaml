@@ -1,0 +1,36 @@
+title: rogo homelab
+
+layout:
+  Infra:
+    style: row
+    columns: 3
+  Media:
+    style: row
+    columns: 2
+  Releases:
+    style: row
+    columns: 2
+  Tools:
+    style: row
+    columns: 3
+
+headerStyle: boxed
+
+quicklaunch:
+  searchDescriptions: true
+  hideInternetSearch: true
+
+settings:
+  theme: dark
+  color: zinc
+  hideVersion: false
+  hideErrors: true
+  showStats: true
+  statusStyle: "dot"
+  showFooter: true
+  showTime: true
+  showDate: true
+
+
+favicon: /images/favicon.ico
+background: /images/grad.png

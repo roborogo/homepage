@@ -1,0 +1,8 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/docker/
+
+ my-docker:
+   host: 192.168.0.55
+   port: 2375
+

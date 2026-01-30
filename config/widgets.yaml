@@ -1,0 +1,18 @@
+- logo:
+    icon: /images/favicon.ico
+
+- greeting:
+    text_size: 4xl
+    text: ROGO Home Lab
+
+- greeting:
+    text_size: xl
+    text:  🤖   🖥️    💾   🖲️   ⌨️   🖱️   📽️   🍿   📺   🎚️   📻   🏴‍☠️   🎶   💽   ⏏️   🎞️   🗒️   📲   🔌   🎛️   🪇
+
+- resources:
+    expanded: true
+    cpu: true
+    cputemp: false
+    memory: true
+    refresh: 1000
+

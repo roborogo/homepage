@@ -1,0 +1,250 @@
+- Infra:
+    - Proxmox:
+        icon: proxmox
+        href: https://192.168.0.159:8006
+        description: Hypervisor
+        container: proxmox
+        widget:
+          type: proxmox
+          url: https://192.168.0.159:8006
+          username: api-user@pam!homepage
+          password: be30e985-2cb6-4f33-8045-4f06029f29b5
+    - Docker:
+        icon: docker
+        description: Containers
+        container: docker
+        widget:
+          type: docker
+          socket: /var/run/docker.sock
+    - Portainer:
+        icon: portainer
+        href: http://192.168.0.55:9000
+        description: Container Manager
+        container: portainer
+        widget:
+          type: portainer
+          url: http://192.168.0.55:9000
+          env: 3
+          key: ptr_L1fm9KLBWywIWKM1sSBKaUYBZx35MERFF7YD7DRraOk=
+          fields: ["running", "stopped", "total"]
+
+-  Media:
+    - Plex:
+        icon: plex
+        href: https://app.plex.tv
+        description: Media Server
+        server: 192.168.0.17
+        statusCheck: true
+        widget:
+          type: plex
+          url: http://192.168.0.17:32400
+          key: nSBfZxkCKwS3JCd2qT1W
+    - Tautulli:
+        icon: tautulli
+        href: http://192.168.0.17:8181
+        description: Plex Server Monitoring, Analytics, and Notifications
+        server: 192.168.0.17
+        statusCheck: true
+        widget:
+          type: tautulli
+          url: http://192.168.0.17:8181
+          key: e974889253494b92a5b812116d2e91a3
+          enableUser: true # optional, defaults to false
+          showEpisodeNumber: true # optional, defaults to false
+          expandOneStreamToTwoRows: true # optional, defaults to true
+    - Overseerr:
+        icon: overseerr
+        href: http://192.168.0.55:5055
+        description: Media Discovery and Request on roborogo
+        container: overseer
+        statusCheck: true
+        widget:
+          type: overseerr
+          url: http://192.168.0.55:5055
+          key: MTc1MjI5MDMzMDQwODI1ZDJkNjI1LTdlMGUtNGY0OC05YmM0LWU1YWE5NzMxM2NjZA==
+          fields: ["pending", "approved", "processing", "available"]
+    - Sonarr:
+        icon: sonarr
+        href: http://192.168.0.55:8989
+        description: Series Management
+        container: sonarr
+        widget:
+          type: sonarr
+          url: http://192.168.0.55:8989
+          key: 2ec6fdccec874f41afded8d8f5c7555b
+          fields: ["wanted", "queued", "series"]
+    - Radarr:
+        icon: radarr
+        href: http://192.168.0.55:7878
+        description: Movie Management
+        container: radarr
+        widget:
+          type: radarr
+          url: http://192.168.0.55:7878
+          key: c22896f6a4fc47aea47c0b75aec14fed
+          enabledQueue: true
+          fields: ["wanted", "missing", "queued", "movies"]
+    - Lidarr:
+        icon: lidarr
+        href: http://192.168.0.55:8686
+        description: Music Management
+        container: lidarr
+        widget:
+          type: lidarr
+          url: http://192.168.0.55:8686
+          key: 5160ae4b888b4cda9fad442e4d9a8126
+          fields: ["wanted", "queued", "artists"]
+    - Prowlarr:
+        icon: prowlarr
+        href: http://192.168.0.55:9696
+        description: Indexer Manager
+        container: prowlarr
+        widget:
+          type: prowlarr
+          url: http://192.168.0.55:9696
+          key: 426c81bff9d54ea4b17dab66dae21212
+    - qBittorrent:
+        icon: qbittorrent
+        href: http://192.168.0.55:8079
+        description: Torrent Client
+        container: qbittorrent
+        widget:
+          type: qbittorrent
+          url: http://172.18.0.2:8079
+          username: rogo
+          password: ThePezDispenser
+          enableLeechProgress: true # optional, defaults to false
+          fields: ["leech", "download", "seed", "upload"]
+    - Bazarr:
+        icon: bazarr
+        href: http://192.168.0.55:6767
+        description: Subtitles Manager
+        container: bazarr
+        widget:
+          type: bazarr
+          url: http://192.168.0.55:6767
+          key: 408610708f56532ab934fc82c4747886
+          fields: ["missingEpisodes", "missingMovies"]
+    - LazyLibrarian:
+        icon: lazylibrarian
+        href: http://192.168.0.55:5299
+        description: AudioBooks
+        container: lazylibrarian
+    - Moodist:
+        icon: moodist
+        href: http://192.168.0.55:8089
+        description: Ambiant Audio Player on roborogo
+        container: moodist
+    - roborogo:
+        icon: /images/roborogo-clean.png
+        href: http://192.168.0.55:8585
+        description: roborogo access page
+        container: landingpage
+    - MusicBrainz Picard:
+        icon: musicbrainz
+        href: http://192.168.0.55:5801
+        description: music tagging
+        container: tools-picard-1
+    - retroassembly:
+        icon: retroassembly
+        href: http://192.168.0.55:8000
+        description: Old School Gaming host
+        container: retroassembly
+    - romm:
+        icon: romm
+        href: http://192.168.0.55:8001
+        description: retro gaming on roborogo
+        container: romm
+
+- Releases:
+  - ⠀⠀⠀⠀🟢 Series ⠀⠀🔵 Movie:
+          href: https://app.plex.tv
+          widget:
+              type: calendar
+              firstDayInWeek: monday
+              view: monthly
+              maxEvents: 50
+              showName: true
+              showTime: false
+              timezone: America/Los_Angeles
+              integrations:
+                - type: sonarr
+                  service_group: Media
+                  service_name: Sonarr
+                  color: green
+                  params:
+                    unmonitored: true
+                - type: radarr
+                  service_group: Media
+                  service_name: Radarr
+                  color: blue
+                  params:
+                    unmonitored: true
+
+- Tools:
+    - Homepage:
+        icon: homepage
+        href: http://192.168.0.55:3000
+        description: Dashboard UI
+        container: homepage
+    - Uptime-Kuma:
+        icon: uptime-kuma
+        href: http://192.168.0.55:3001
+        description: Uptime Monitoring
+        container: uptime-kuma
+    - Gluetun:
+        icon: gluetun
+        href: https://github.com/qdm12/gluetun
+        description: VPN Tunnel
+        container: gluetun
+    - Firefox:
+        icon: firefox
+        href: http://192.168.0.55:5800
+        description: Firefox on Gluetun - VNC pass
+        container: firefox
+    - MKVToolnix:
+        icon: mkvtoolnix
+        href: http://192.168.0.55:5980
+        description: MKVToolNix GUI
+        container: MKVToolNix
+    - Watchtower:
+        icon: watchtower
+        href: http://172.21.0.2
+        description: Docker Container Updates
+        container: watchtower
+    - Grafana:
+       icon: grafana
+       href: http://192.168.0.55:3002
+       description: dashboards and metrics
+    - Prometheus:
+       icon: prometheus
+       href: http://192.168.0.55:9090
+       description: metrics collector
+    - Node Exporter:
+       icon: prometheus
+       href: http://192.168.0.55:9100
+       description: system metrics
+    - cAdvisor:
+       icon: cadvisor
+       href: http://192.168.0.55:8081
+       description: container metrics
+    - goaccess:
+       icon: goaccess
+       href: http://192.168.0.55:7891/report.html
+       description: rundata site metrics
+    - filebrowser:
+       icon: filebrowser
+       href: https://files.roborogo.com
+       description: remote file management
+    - n8n:
+       icon: n8n
+       href: http://192.168.0.55:5678
+       description: automation workflows
+    - console:
+       icon: console
+       href: http://192.168.0.55:/3020
+       description: dev console
+    - syncthing:
+       icon: syncthing
+       href: http://192.168.0.55:8384/
+       description: file copy automation platform
