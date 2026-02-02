@@ -27,7 +27,7 @@
           env: 3
           key: "{{HOMEPAGE_VAR_PORTAINER_KEY}}"
           fields: ["running", "stopped", "total"]
-    - Glances:
+    - Windows Glances:
         icon: windows-11
         href: http://192.168.0.17:61208
         description: rogenski-pc
@@ -38,7 +38,7 @@
           url: http://192.168.0.17:61208
           version: 4
           metric: info
-    - Glances:
+    - Pi Glances:
         icon: raspberry-pi 
         href: http://192.168.0.25:61208
         description: rogo-pi5
