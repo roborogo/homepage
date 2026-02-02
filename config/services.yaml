@@ -270,3 +270,7 @@
        icon: syncthing
        href: http://192.168.0.55:8384/
        description: file copy automation platform
+    - cockpit:
+       icon: cockpit
+       href: http://192.168.0.25:9090
+       description: rogo-pi5 management dashboard
