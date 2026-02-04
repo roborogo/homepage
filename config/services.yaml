@@ -58,8 +58,8 @@
         widget:
           type: homeassistant
           url: http://192.168.0.42:8123
-          key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIxMzU5MmQxYWY4ZTE0MTIxODYwNTQyNDU5N2ExZjZkYiIsImlhdCI6MTc1NTA1NzYxOCwiZXhwIjoyMDcwNDE3NjE4fQ.KqufPRtfkSUVt_WGDKF3276midhtywVu7866mYDuhqU
-          -state: "Home Lab Outlet".total.energy.today
+          key: "{{HOMEPAGE_VAR_HOMEASSISTANT_KEY}}"
+          #-state: "Home Lab Outlet".total.energy.today
 
 -  Media:
     - Plex:
