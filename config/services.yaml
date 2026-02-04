@@ -49,6 +49,17 @@
           url: http://192.168.0.25:61208
           version: 4
           metric: info
+    - Home Assistant:
+        icon: home-assistant
+        href: http://192.168.0.42:8123
+        description: rogo home assistant
+        server: 192.168.0.42
+        statusCheck: true
+        widget:
+          type: homeassistant
+          url: http://192.168.0.42:8123
+          key: "{{HOMEPAGE_VAR_HOMEASSISTANT_KEY}}"
+          #-state: "Home Lab Outlet".total.energy.today
 
 -  Media:
     - Plex:
@@ -274,3 +285,7 @@
        icon: cockpit
        href: http://192.168.0.25:9090
        description: rogo-pi5 management dashboard
+    - hometube:
+       icon: hometube
+       href: http://192.168.0.55:8501
+       description: yt-dlp downloader
